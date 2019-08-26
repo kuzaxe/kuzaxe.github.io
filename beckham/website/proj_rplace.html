@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>r/place</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    
+    <div class="page">
+    <div id="colorlib-page">
+      <header>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="colorlib-navbar-brand">
+                <a class="colorlib-logo" href="index.html"><span class="logo-img" style="background-image: url(images/person_1.jpg);"></span>Raj Pandya</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="ftco-section">
+        <div class="container mt-5">
+        	<div class="row justify-content-center mb-5 pb-5">
+            <div class="col-md-7 text-center heading-section ftco-animate">
+              <span>AMAZON WEB SERVICES • SCALABLE COMPUTING</span>
+              <h2>Building r/place</h2>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-8">
+              <h2 class="mb-3">Purpose</h2>
+              <p>As part of the final project for CSC409 - Scalable Computing, we were tasked with recreating <a href="https://en.wikipedia.org/wiki/Place_(Reddit)">r/place</a> using Amazon Web Services (AWS). The purpose was to familiarize ourselves with AWS and it's various capabilities.</p>
+              <p>
+                <img src="images/work-1.png" alt="" class="img-fluid">
+              </p>
+              <h2 class="mb-3 mt-5">Event Flow</h2>
+              <p>
+                <ol>
+                  <li>User connects with our website.</li>
+                  <li>User prompted to log into Amazon account and redirected to Amazon login.</li>
+                  <li>Once successfully logged in, they are redirected back to our website and are able to view the r/place canvas.</li>
+                  <li>User is able to set a pixel using a colour map or RGB codes, and then a timer begins once pixel is placed.</li>
+                  <li>After timer expires, user can edit again. <i>Logout option available as well.</i></li>
+                </ol>
+              </p>
+              <h2 class="mb-3 mt-5">Services Used</h2>
+              <p><a href="https://aws.amazon.com/elasticache/">AWS Elasticache</a>: as Redis to store MAP on server for quick reads and writes.</p>
+              <p><a href="https://aws.amazon.com/dynamodb/">AWS DynamoDB</a>: For storing user info and their last committed pixel timestamp and the history of the map (who placed what pixel where and when, including geolocation because data sells).</p>
+              <p><a href="https://valve.github.io/fingerprintjs2/">FingerprintJS2</a>: Initially used to identify unique individuals based on browser fingerprint.</p>
+              <p><a href="https://www.npmjs.com/package/ejs">Node.js along with EJS</a> (Embedded JavaScript template for HTML): For server and front end communication.</p>
+              <p><a href="https://aws.amazon.com/elasticloadbalancing/">AWS Application Load Balancer (ALB)</a>: Used to scale up and down while maintaining high availability.</p>
+              <p><a href="https://aws.amazon.com/cloudwatch/">AWS CloudWatch</a>: Used to monitor number of DynamoDB read and writes.</p>
+              <p><a href="https://aws.amazon.com/cognito/">AWS Cognito</a>: Replaced FingerprintJS2 for a more secure way of accessing rights to update map.</p>
+              <p>There were some tools we wanted to use such as <a href="https://aws.amazon.com/neptune/">AWS Neptune</a> for data modelling and <a href="https://aws.amazon.com/athena/">AWS Athena</a> for DynamoDB data querying but due to Amazon-Canada limitations, we were not able to go down that path.</p>
+
+              <h2 class="mb-3 mt-5">Architecture</h2>
+              <p>
+                  <img src="images/rplace_architecture.png" alt="" class="img-fluid">
+                </p>
+            </div> <!-- .col-md-8 -->
+          </div>
+        </div>
+      </section>
+      
+      <footer class="ftco-footer ftco-bg-dark ftco-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <p>Website design by <a href="https://colorlib.com" target="_blank">Joefrey & Colorlib.</a></p>
+              <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="js/google-map.js"></script>
+    <script src="js/main.js"></script>
+    
+  </body>
+</html>
